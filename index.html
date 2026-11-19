@@ -1,0 +1,459 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10151c">
+<title>سامانه دعوت | دهه فجر</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap');
+
+:root {
+ --red:#ed2944;
+ --green:#20bd7c;
+ --gold:#e9c77b;
+ --bg:#10151c;
+ --card:#1b2530;
+ --muted:#a3afbb;
+}
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;color:white;
+ font-family:Vazirmatn,sans-serif;
+ background:
+ radial-gradient(at 10% 10%,#ed294425,transparent 40%),
+ radial-gradient(at 90% 85%,#20bd7c22,transparent 40%),var(--bg);
+ overflow-x:hidden;
+}
+button{font-family:inherit;cursor:pointer}
+header{
+ padding:18px 6%;display:flex;align-items:center;
+ justify-content:space-between;border-bottom:1px solid #ffffff16;
+}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900}
+.logo{
+ width:43px;height:43px;border-radius:14px;
+ display:grid;place-items:center;font-size:24px;
+ background:linear-gradient(135deg,var(--red),#99152e);
+}
+.tag{font-size:11px;color:var(--gold);border:1px solid #e9c77b55;padding:7px 12px;border-radius:30px}
+main{width:min(510px,92%);margin:40px auto}
+.hero{text-align:center;margin-bottom:28px;animation:appear .7s}
+.hero-icon{font-size:58px;animation:float 3s infinite}
+h1{font-size:29px;font-weight:900}
+h1 span{color:var(--gold)}
+.hero p,.desc{color:var(--muted);font-size:13px;line-height:2}
+.flag{
+ width:120px;height:4px;border-radius:5px;margin:18px auto;
+ background:linear-gradient(to left,var(--green) 33%,white 33%,white 66%,var(--red) 66%);
+}
+.card{
+ padding:24px;background:linear-gradient(145deg,#222e3b,#171e27);
+ border:1px solid #ffffff16;border-radius:23px;
+ box-shadow:0 20px 60px #0005;animation:appear .4s;
+}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{50%{transform:translateY(-12px) rotate(8deg)}}
+.title{font-size:19px;font-weight:800;margin-bottom:7px}
+.desc{margin-bottom:20px}
+.menu{display:grid;gap:12px}
+.menu-btn,.platform-btn{
+ width:100%;display:flex;align-items:center;gap:13px;
+ background:#ffffff09;color:white;border:1px solid #ffffff16;
+ padding:15px;border-radius:15px;text-align:right;transition:.25s;
+}
+.menu-btn:hover,.platform-btn:hover{transform:translateX(-5px);border-color:var(--gold)}
+.ico{
+ width:43px;height:43px;border-radius:13px;
+ background:#ffffff12;display:grid;place-items:center;font-size:23px;
+}
+.info{flex:1}
+.info strong{display:block;font-size:13px}
+.info small{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.arrow{color:var(--gold);font-size:20px}
+.primary{
+ width:100%;padding:14px;border:0;border-radius:14px;
+ background:linear-gradient(100deg,#cf1836,#fa465c);
+ color:white;font-size:14px;font-weight:800;
+ transition:.2s;box-shadow:0 7px 22px #ed294433;
+}
+.primary:hover{transform:translateY(-3px)}
+.secondary{
+ width:100%;padding:12px;margin-top:10px;
+ background:transparent;border:1px solid #ffffff30;
+ color:white;border-radius:13px;
+}
+.android{border-right:4px solid var(--green)}
+.ios{border-right:4px solid #999dff}
+.notice{
+ padding:13px;border-radius:12px;margin-top:17px;
+ background:#e9c77b12;border:1px solid #e9c77b35;
+ color:var(--gold);font-size:12px;line-height:2;
+}
+.back{border:0;background:none;color:var(--gold);padding:5px;margin-bottom:15px}
+.code-box{
+ background:#0e151e;border:1px dashed #e9c77b80;
+ border-radius:17px;text-align:center;padding:22px 10px;margin:20px 0;
+}
+.code{
+ font-family:monospace;font-size:37px;font-weight:900;
+ color:var(--gold);letter-spacing:7px;direction:ltr;margin:15px 0;
+}
+.timer{
+ font-family:monospace;font-size:34px;color:var(--green);
+ font-weight:900;direction:ltr;margin:13px;
+}
+.warning{color:var(--red)!important}
+.small{font-size:12px;color:var(--muted);line-height:2}
+.copy-message{font-size:12px;color:var(--green);margin-top:12px;min-height:20px}
+.ios-box{text-align:center;padding:25px 5px}
+.ios-box .big{font-size:60px}
+footer{text-align:center;padding:20px;color:#87939f;font-size:11px;line-height:2.3}
+.hidden{display:none!important}
+#particles{position:fixed;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.particle{position:absolute;animation:float 7s ease-in-out infinite;opacity:.3;font-size:24px}
+@media(max-width:400px){h1{font-size:24px}.card{padding:18px}.code{font-size:32px}}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<header>
+ <div class="brand"><div class="logo">🇮🇷</div> سامانه دعوت</div>
+ <div class="tag">✨ ویژه دهه فجر</div>
+</header>
+
+<main>
+
+<div class="hero">
+ <div class="hero-icon">🎆</div>
+ <h1>به <span>سامانه دعوت</span> خوش آمدید</h1>
+ <p>دروازه ورود شما به تجربه‌ای متفاوت<br>یکی از خدمات زیر را انتخاب کنید.</p>
+ <div class="flag"></div>
+</div>
+
+<!-- خانه -->
+<section class="card" id="home">
+ <div class="title">🏠 منوی اصلی</div>
+ <div class="desc">برای ادامه یکی از گزینه‌ها را انتخاب کنید.</div>
+ <div class="menu">
+  <button class="menu-btn" onclick="showPage('platform')">
+   <div class="ico">🎟️</div>
+   <div class="info"><strong>دریافت کد دعوت</strong><small>دریافت کد اختصاصی شش حرفی</small></div>
+   <span class="arrow">‹</span>
+  </button>
+  <button class="menu-btn" onclick="showPage('support')">
+   <div class="ico">🎧</div>
+   <div class="info"><strong>پشتیبانی</strong><small>ارتباط با تیم پشتیبانی</small></div>
+   <span class="arrow">‹</span>
+  </button>
+  <button class="menu-btn" onclick="showPage('guide')">
+   <div class="ico">📖</div>
+   <div class="info"><strong>راهنمای استفاده</strong><small>آموزش مراحل دریافت کد</small></div>
+   <span class="arrow">‹</span>
+  </button>
+  <button class="menu-btn" onclick="showPage('about')">
+   <div class="ico">ℹ️</div>
+   <div class="info"><strong>درباره سامانه</strong><small>اطلاعات و معرفی سامانه</small></div>
+   <span class="arrow">‹</span>
+  </button>
+ </div>
+</section>
+
+<!-- انتخاب سیستم عامل -->
+<section class="card hidden" id="platform">
+ <button class="back" onclick="showPage('home')">→ بازگشت</button>
+ <div class="title">📲 انتخاب سیستم عامل</div>
+ <div class="desc">ابتدا نسخه مناسب دستگاه خود را انتخاب کنید.</div>
+
+ <button class="platform-btn android" onclick="androidDownload()">
+  <div class="ico">🤖</div>
+  <div class="info"><strong>دریافت اپلیکیشن برای اندروید</strong><small>دانلود نسخه Android</small></div>
+  <span class="arrow">⬇</span>
+ </button>
+
+ <button class="platform-btn ios" onclick="showPage('ios')">
+  <div class="ico">🍎</div>
+  <div class="info"><strong>دریافت اپلیکیشن برای iOS</strong><small>نسخه آیفون و آیپد</small></div>
+  <span class="arrow">‹</span>
+ </button>
+
+ <div class="notice">⚠️ پس از انتخاب نسخه اندروید، کد دعوت برای شما نمایش داده می‌شود.</div>
+</section>
+
+<!-- آیفون -->
+<section class="card hidden" id="ios">
+ <button class="back" onclick="showPage('platform')">→ بازگشت</button>
+ <div class="ios-box">
+  <div class="big">🍎</div>
+  <h2 style="color:var(--gold)">به‌زودی...</h2>
+  <p class="desc">نسخه مخصوص iOS در دست توسعه است و به‌زودی منتشر خواهد شد.</p>
+ </div>
+ <button class="primary" onclick="showPage('platform')">متوجه شدم</button>
+</section>
+
+<!-- کد دعوت -->
+<section class="card hidden" id="codePage">
+ <button class="back" onclick="showPage('home')">→ منوی اصلی</button>
+ <div class="title">🎟️ کد دعوت اختصاصی شما</div>
+ <div class="desc">کد زیر را در اپلیکیشن وارد کنید.</div>
+
+ <div class="code-box">
+  <div class="small">کد دعوت شما</div>
+  <div class="code" id="inviteCode">------</div>
+  <button class="primary" onclick="copyCode()">📋 کپی کردن کد</button>
+  <div class="copy-message" id="copyMessage"></div>
+ </div>
+
+ <div style="text-align:center">
+  <div class="small">⏳ زمان باقی‌مانده برای استفاده از کد</div>
+  <div class="timer" id="timer">10:00</div>
+  <div class="small" id="timerText">تا پایان این زمان فرصت دارید از کد استفاده کنید.</div>
+ </div>
+
+ <div class="notice hidden" id="expiredNotice">
+  ⛔ اعتبار کد به پایان رسیده است. برای دریافت کد جدید اقدام کنید.
+ </div>
+ <button class="primary hidden" id="newCodeBtn" onclick="generateCode()" style="margin-top:15px">
+  🔄 دریافت کد جدید
+ </button>
+</section>
+
+<!-- پشتیبانی -->
+<section class="card hidden" id="support">
+ <button class="back" onclick="showPage('home')">→ بازگشت</button>
+ <div class="title">🎧 مرکز پشتیبانی</div>
+ <p class="desc">برای ارتباط با تیم پشتیبانی می‌توانید از راه ارتباطی زیر استفاده کنید.</p>
+ <div class="notice">📩 آدرس پشتیبانی خود را در بخش تنظیمات کد وارد کنید.</div>
+</section>
+
+<!-- راهنما -->
+<section class="card hidden" id="guide">
+ <button class="back" onclick="showPage('home')">→ بازگشت</button>
+ <div class="title">📖 راهنمای استفاده</div>
+ <p class="desc">
+  ۱. وارد بخش دریافت کد دعوت شوید.<br><br>
+  ۲. سیستم عامل دستگاه خود را انتخاب کنید.<br><br>
+  ۳. نسخه اندروید را دانلود کنید.<br><br>
+  ۴. کد شش حرفی خود را دریافت کنید.<br><br>
+  ۵. کد را پیش از پایان تایمر در اپلیکیشن وارد کنید.
+ </p>
+</section>
+
+<!-- درباره -->
+<section class="card hidden" id="about">
+ <button class="back" onclick="showPage('home')">→ بازگشت</button>
+ <div class="title">🇮🇷 درباره سامانه</div>
+ <p class="desc">سامانه دریافت کد دعوت با طراحی ویژه دهه فجر، برای سهولت دسترسی به اپلیکیشن و دریافت کد دعوت طراحی شده است.</p>
+ <div class="notice">✨ استقلال • آزادی • سربلندی</div>
+</section>
+
+</main>
+
+<footer>
+ 🇮🇷 استقلال • آزادی • سربلندی 🇮🇷<br>
+ سامانه دریافت کد دعوت<br>
+ © 2026
+</footer>
+
+<script>
+
+// ======================================
+// تنظیمات قابل تغییر توسط مدیر سامانه
+// ======================================
+
+// لینک مستقیم دانلود برنامه اندروید:
+const ANDROID_DOWNLOAD_URL = "https://api.skystorage.ir/download.php?s=c1b2d515616a1645.ba16c0195c1b4df4c7d8";
+
+// مدت اعتبار کد: ۱۰ دقیقه
+const CODE_DURATION = 10 * 60 * 1000;
+
+
+// ======================================
+// انیمیشن پس زمینه
+// ======================================
+
+const particleBox = document.getElementById("particles");
+const emojis = ["✨","🎆","⭐","🇮🇷","🎇","✦"];
+
+for(let i=0;i<20;i++){
+ const p=document.createElement("div");
+ p.className="particle";
+ p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+ p.style.left=Math.random()*100+"%";
+ p.style.top=Math.random()*100+"%";
+ p.style.animationDelay=Math.random()*6+"s";
+ particleBox.appendChild(p);
+}
+
+
+// ======================================
+// مدیریت صفحات
+// ======================================
+
+const pageNames=[
+ "home","platform","ios","codePage",
+ "support","guide","about"
+];
+
+function showPage(name){
+ pageNames.forEach(id=>{
+  document.getElementById(id).classList.add("hidden");
+ });
+ document.getElementById(name).classList.remove("hidden");
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+
+
+// ======================================
+// دانلود اندروید
+// ======================================
+
+function androidDownload(){
+
+ if(!ANDROID_DOWNLOAD_URL ||
+    ANDROID_DOWNLOAD_URL==="YOUR_ANDROID_DOWNLOAD_LINK"){
+  alert("مدیر سامانه هنوز لینک دانلود را تنظیم نکرده است.");
+  return;
+ }
+
+ const link=document.createElement("a");
+ link.href=ANDROID_DOWNLOAD_URL;
+ link.download="";
+ link.rel="noopener";
+ document.body.appendChild(link);
+ link.click();
+ link.remove();
+
+ generateCode();
+}
+
+
+// ======================================
+// ساخت کد تصادفی ۶ حرفی
+// ======================================
+
+function randomCode(){
+
+ const letters="ABCDEFGHJKLMNPQRSTUVWXYZ";
+ const values=new Uint8Array(6);
+ crypto.getRandomValues(values);
+
+ let result="";
+
+ for(let i=0;i<6;i++){
+  result+=letters[values[i]%letters.length];
+ }
+
+ return result;
+}
+
+
+// ======================================
+// دریافت کد جدید
+// ======================================
+
+function generateCode(){
+
+ const code=randomCode();
+ const expiry=Date.now()+CODE_DURATION;
+
+ sessionStorage.setItem("inviteCode",code);
+ sessionStorage.setItem("inviteExpiry",expiry);
+
+ document.getElementById("inviteCode").textContent=code;
+ document.getElementById("copyMessage").textContent="";
+ document.getElementById("expiredNotice").classList.add("hidden");
+ document.getElementById("newCodeBtn").classList.add("hidden");
+
+ showPage("codePage");
+ updateTimer();
+}
+
+
+// ======================================
+// تایمر ۱۰ دقیقه‌ای
+// ======================================
+
+let timerInterval=null;
+
+function updateTimer(){
+
+ clearInterval(timerInterval);
+
+ function tick(){
+
+  const expiry=Number(sessionStorage.getItem("inviteExpiry"));
+  const remaining=expiry-Date.now();
+
+  const timer=document.getElementById("timer");
+
+  if(remaining<=0){
+
+   timer.textContent="00:00";
+   timer.classList.add("warning");
+
+   document.getElementById("inviteCode").textContent="EXPIRED";
+   document.getElementById("expiredNotice").classList.remove("hidden");
+   document.getElementById("newCodeBtn").classList.remove("hidden");
+   document.getElementById("timerText").textContent="اعتبار کد به پایان رسیده است.";
+
+   clearInterval(timerInterval);
+   return;
+  }
+
+  const min=Math.floor(remaining/60000);
+  const sec=Math.floor((remaining%60000)/1000);
+
+  timer.textContent=
+   String(min).padStart(2,"0")+":"+
+   String(sec).padStart(2,"0");
+
+  timer.classList.toggle("warning",remaining<=60000);
+ }
+
+ tick();
+ timerInterval=setInterval(tick,1000);
+}
+
+
+// ======================================
+// کپی کردن کد
+// ======================================
+
+async function copyCode(){
+
+ const code=sessionStorage.getItem("inviteCode");
+ const expiry=Number(sessionStorage.getItem("inviteExpiry"));
+
+ if(!code || Date.now()>=expiry)return;
+
+ try{
+  await navigator.clipboard.writeText(code);
+  document.getElementById("copyMessage").textContent="✅ کد با موفقیت کپی شد!";
+ }catch(error){
+  document.getElementById("copyMessage").textContent="لطفاً کد را دستی انتخاب کنید.";
+ }
+}
+
+
+// ======================================
+// بازیابی وضعیت تایمر
+// ======================================
+
+const savedCode=sessionStorage.getItem("inviteCode");
+const savedExpiry=Number(sessionStorage.getItem("inviteExpiry"));
+
+if(savedCode && savedExpiry && Date.now()<savedExpiry){
+ document.getElementById("inviteCode").textContent=savedCode;
+ updateTimer();
+}
+
+</script>
+</body>
+</html>
+
